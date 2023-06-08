@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import add_0 as add
+# import add_0 as add
+from add_0 import add
 a = 1
 b = 2
-res = add.add(a, b)
+res = add(a, b)
 print("{} + {} = {}".format(a, b, res))
