@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def no_c(my_string):
     newStr = ""
     for el in my_string:
