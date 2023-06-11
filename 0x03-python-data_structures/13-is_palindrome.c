@@ -70,7 +70,10 @@ int is_palindrome(listint_t **head)
 	{
 		return (1);  /* if empty or single list , it's a  palindrome*/
 	}
-
+	if (middle == NULL)
+	{
+		return (1);
+	}
 	while (reversedCurrent != NULL)
 	{
 		if (current->n != reversedCurrent->n)
