@@ -8,13 +8,16 @@
 */
 listint_t *find_mid(listint_t *head)
 {
+	listint_t *fast;
+	listint_t *slow;
+
 	if (head == NULL)
 	{
 		return (NULL);
 	}
 
-	listint_t *fast = head;
-	listint_t *slow = head;
+	fast = head;
+	slow = head;
 
 	while (fast->next != NULL && fast->next->next != NULL)
 	{
@@ -58,15 +61,15 @@ listint_t *reverse_list(listint_t *head)
  */
 int is_palindrome(listint_t **head)
 {
-	if (head == NULL || *head == NULL || (*head)->next == NULL)
-	{
-		return (1);  /* if empty or single list , it's a  palindrome*/
-	}
-
 	listint_t *middle = find_mid(*head);
 	listint_t *reversed = reverse_list(middle->next);
 	listint_t *current = *head;
 	listint_t *reversedCurrent = reversed;
+
+	if (head == NULL || *head == NULL || (*head)->next == NULL)
+	{
+		return (1);  /* if empty or single list , it's a  palindrome*/
+	}
 
 	while (reversedCurrent != NULL)
 	{
