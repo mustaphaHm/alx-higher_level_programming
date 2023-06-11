@@ -62,18 +62,24 @@ listint_t *reverse_list(listint_t *head)
 int is_palindrome(listint_t **head)
 {
 	listint_t *middle = find_mid(*head);
-	listint_t *reversed = reverse_list(middle->next);
-	listint_t *current = *head;
-	listint_t *reversedCurrent = reversed;
+	listint_t *reversed;
+	listint_t *current;
+	listint_t *reversedCurrent;
+
+	if (middle == NULL)
+	{
+		return (1);
+	}
+
+	reversed = reverse_list(middle->next);
+	current = *head;
+	reversedCurrent = reversed;
 
 	if (head == NULL || *head == NULL || (*head)->next == NULL)
 	{
 		return (1);  /* if empty or single list , it's a  palindrome*/
 	}
-	if (middle == NULL)
-	{
-		return (1);
-	}
+
 	while (reversedCurrent != NULL)
 	{
 		if (current->n != reversedCurrent->n)
