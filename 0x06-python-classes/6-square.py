@@ -46,10 +46,10 @@ class Square:
 
     @property
     def position(self):
-        """Get the tuple of the square."""
+        """Get the position of the square."""
         return self.__position
 
-    @size.setter
+    @position.setter
     def position(self, value):
         """Set the tuple of the square."""
         if (not isinstance(value, tuple) or
