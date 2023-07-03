@@ -6,6 +6,7 @@ class Rectangle:
     """Rectangle class based on first task"""
 
     def __init__(self, width=0, height=0):
+        """ initializes height and width """
         self.width = width
         self.height = height
 
