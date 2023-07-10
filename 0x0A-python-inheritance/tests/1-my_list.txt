@@ -1,7 +1,5 @@
 >>> MyList = __import__('1-my_list').MyList
-
-Test 1: normale case and sorted case
->>> my_list = Mylist()
+>>> my_list = MyList()
 >>> my_list.append(1)
 >>> my_list.append(4)
 >>> my_list.append(2)
@@ -15,14 +13,14 @@ Test 1: normale case and sorted case
 [1, 4, 2, 3, 5]
 
 Test 2: empty list
->>> my_list = Mylist()
+>>> my_list = MyList()
 >>> print(my_list)
 []
 >>> my_list.print_sorted()
 []
 
 Test 1: normale negative case
->>> my_list = Mylist()
+>>> my_list = MyList()
 >>> my_list.append(-1)
 >>> my_list.append(-4)
 >>> my_list.append(-2)
