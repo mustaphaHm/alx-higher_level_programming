@@ -9,14 +9,12 @@ load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
 file_name = "add_item.json"
 arguments = sys.argv[1:]
+obj = []
 try:
     obj = load_from_json_file(file_name)
 except FileNotFoundError:
     save_to_json_file([], file_name)
 
-obj = load_from_json_file(file_name)
-if type(obj) is list:
-    for e in arguments:
-        obj.append(e)
+obj.extend(arguments)
 
 save_to_json_file(obj, file_name)
