@@ -25,7 +25,7 @@ class Student:
                 if k in attrs:
                     dict[k] = self.__dict__[k]
         return dict
-    
+
     def reload_from_json(self, json):
         """ replaces all attrs of an instance given json obj """
         for key in json:
