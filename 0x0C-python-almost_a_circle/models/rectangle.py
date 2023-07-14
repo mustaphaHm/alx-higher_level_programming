@@ -85,3 +85,12 @@ class Rectangle(Base):
         return "[Rectangle] ({}) {}/{} - {}/{}".format(
             self.id, self.__x, self.__y, self.__width, self.__height
             )
+
+    def update(self, *args):
+        """Assigns arguments to each attribut by order"""
+        lenghtARgs = len(args)
+        self.id = args[0] if lenghtARgs >= 1 else self.id
+        self.__width = args[1] if lenghtARgs >= 2 else self.__width
+        self.__height = args[2] if lenghtARgs >= 3 else self.__height
+        self.__x = args[3] if lenghtARgs >= 4 else self.__x
+        self.__y = args[4] if lenghtARgs >= 5 else self.__y
