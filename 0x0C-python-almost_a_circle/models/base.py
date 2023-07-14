@@ -38,3 +38,11 @@ class Base:
             toWrite = "[]"
         with open(file_name, mode="w", encoding="utf-8") as f:
             f.write(toWrite)
+
+    @staticmethod
+    def from_json_string(json_string):
+        """returns the list of the JSON string representation json_string"""
+        if json_string is None or json_string == "" or json_string == "[]":
+            return []
+        else:
+            return json.loads(json_string)
