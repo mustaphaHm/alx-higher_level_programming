@@ -7,6 +7,9 @@ from models.base import Base
 
 class TestRectangle(unittest.TestCase):
     """ Definition of class rectangle """
+    def setUp(self):
+        """ Resets id"""
+        Base._Base__nb_objects = 0
 
     def test_rectangle(self):
         """ rectangle func """
@@ -60,11 +63,7 @@ class TestRectangle(unittest.TestCase):
 
         self.assertEqual(Rectangle(3, 2).area(), 6)
 
-        self.assertEqual(
-                Rectangle(4, 6, 2, 1, 12).__str__(),
-                '[Rectangle] (12) 2/1 - 4/6'
-                )
-
+        self.assertEqual(Rectangle(4, 6, 2, 1, 12).__str__(), '[Rectangle] (12) 2/1 - 4/6')
 
 if __name__ == '__main__':
     unittest.main()
