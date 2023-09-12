@@ -7,6 +7,6 @@ if (arg.length === 2 || arg.length === 3) {
   for (let i = 2; i < process.argv.length; i++) {
     arr.push(parseInt(process.argv[i]));
   }
-  arr = arr.sort();
+  arr = arr.sort((a,b) => a - b);
   console.log(arr[arr.length - 2]);
 }
